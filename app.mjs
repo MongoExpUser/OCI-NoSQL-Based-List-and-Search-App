@@ -327,20 +327,8 @@ class CarApp
 
 async function main()
 {
-    
-    const credentials = {
-        region: "us-phoenix-1",
-        auth: { 
-            iam: { 
-                tenantId: 'tenantId', 
-                userId: 'userId', 
-                fingerprint: 'fingerprint', 
-                privateKeyFile: 'privateKeyFile', 
-                passphrase: 'passphrase' 
-            } 
-        }
-    }
-    
+    const credentialJsonFilePath = "credentials.json";
+    const credentials =  JSON.parse(fs.readFileSync(credentialJsonFilePath));
     const tableLimits = { capacityMode: "PROVISIONED", readUnits: 25, writeUnits: 25, storageGB: 25 } ;  // "PROVISIONED" || "ON_DEMAND"
     const capp = new CarApp();
     const client = new NoSQLClient(credentials);
