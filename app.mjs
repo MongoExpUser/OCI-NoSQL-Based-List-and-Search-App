@@ -22,6 +22,7 @@
 */
 
 
+
 import fs from "fs";
 import util from "util";
 import bcryptjs from "bcryptjs";
@@ -37,83 +38,6 @@ class CarApp
     constructor()
     {
       return null;
-    }
-
-    async unixTimeToUTC(unixTime)
-    {
-        return new Date(unixTime * 1000);   
-    }
-
-    async utcTimeToUnix(utcTime)
-    {
-        return Math.round(utcTime.getTime() / 1000);   
-    }
-
-    async commonLongDateFormat()
-    {
-        return { weekday: "long", year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit"};
-    }
-
-    async currentTimeUTCNoPadding(time)
-    {
-        const now = time;
-        const year = now.getUTCFullYear();
-        const month = now.getUTCMonth() + 1;
-        const date = now.getUTCDate();
-        const hours = now.getUTCHours();
-        const minutes = now.getUTCMinutes();
-        const seconds = now.getUTCSeconds();
-        const timeFormatted = `${year}-${month}-${date}-${hours}-${minutes}-${seconds}`;
-        return { hours: hours, timeFormatted: timeFormatted };
-    }
-
-    padNumber(number, length) 
-    {
-        number = number.toString();
-        
-        if(number.length < length)
-        { 
-            number = `0${number}`;
-        }
-        
-        return number;
-    }
-
-    async currentTimeUTC(time)
-    {
-        const ucom = new UserCommon();
-        const length = 2;
-        const now = time;
-        const year = now.getUTCFullYear();
-        const month = ucom.padNumber(now.getUTCMonth() + 1, length);
-        const date =  ucom.padNumber(now.getUTCDate(), length);
-        const hours =  ucom.padNumber(now.getUTCHours(), length);
-        const minutes = ucom.padNumber(now.getUTCMinutes(), length);
-        const seconds =  ucom.padNumber(now.getUTCSeconds(), length);
-        const timeFormatted = `${year}-${month}-${date}-${hours}-${minutes}-${seconds}`;
-        return { hours: hours, timeFormatted: timeFormatted };
-    }
-
-    async currentTime()
-    {
-        const timeNow = new Date();
-        const year = timeNow.getFullYear();
-        const hour = timeNow.getHours();
-        const minute = timeNow.getMinutes();
-        const second = timeNow.getSeconds();
-        return `${hour}-${minute}-${second}`;
-    }
-    
-    async currentDay()
-    {
-        const timeNow = new Date();
-        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        const monthNamesIndex = timeNow.getMonth();
-        const weekDayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const weekDayNamesIndex = timeNow.getDay();
-        const monthDay = timeNow.getDate();
-        const year = timeNow.getFullYear();
-        return `${weekDayNames[weekDayNamesIndex]}, ${monthNames[monthNamesIndex]} ${monthDay}, ${year}`;
     }
 
     async prettyPrint(value, showHidden)
@@ -238,29 +162,10 @@ class CarApp
             const info = { "email": email, "manufacturer": manufacturer, "yearMade" : yearMade, "addressPlain": addressPlain, "addressJson": addressJson, "description": description, "imagePath": imagePath, "createdon": date, "updatedon": date };
             await data.push({"user": user, "info": info, "date": date, "uid": uid});
         }
-      
+        
         return data;
     }
     
-    async unixTimeToUTC(unixTime)
-    {
-        return new Date(unixTime * 1000); 
-    }
-
-    async utcTimeToUnix(utcTime)
-    {
-        return Math.round(utcTime.getTime() / 1000);   
-    }
-
-    async probeObject(item)
-    {
-        for(let obj in item)
-        {
-            let key = String(obj);
-            let value = item[key];
-            console.log({ key : value } );
-        }
-    }
 
     async createDropTableAndWriteReadData(client, tableName, record, tableLimits, createTable, writeRecord, readRecord, dropTable, createIndex, indexName, indexColumn) 
     {
@@ -480,7 +385,6 @@ async function main()
                     "createdon" : createdon, 
                     "updatedon" : updatedon 
                 };
-                //capp.prettyPrint(carRecord);
                 await capp.runOperation(client, carTable , carRecord, tableLimits, createTable, writeRecord, readRecord, dropTable, createIndex, carIndexName, carIndexColumn);
                 console.log( "Successfully Oracle NoSQL Database car operation(s)!");
                 console.log( "----------------------------------------------------");
