@@ -40,6 +40,16 @@ class CarApp
       return null;
     }
 
+    async probeObject(item)
+    {
+        for(let obj in item)
+        {
+            let key = String(obj);
+            let value = item[key];
+            console.log({ key : value } );
+        }
+    }
+    
     async prettyPrint(value, showHidden)
     {
         console.log(util.inspect(value, { showHidden: showHidden, colors: true, depth: Infinity }));
