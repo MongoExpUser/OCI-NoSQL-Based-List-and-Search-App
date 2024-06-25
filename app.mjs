@@ -282,6 +282,7 @@ class CarApp
 
     async searchCarRecords(credentials)
     {
+        const capp = new CarApp();
         const client = new NoSQLClient(credentials);
 
         try 
@@ -299,7 +300,7 @@ class CarApp
                     console.log(`Retrieved ${result.rows.length} rows`);
                     const rows = result.rows;
                     const showHidden = false;
-                    console.log(util.inspect(rows, { showHidden: showHidden, colors: true, depth: Infinity })); // for cars
+                    await capp.prettyPrint(rows, showHidden);
                 }
             }
         } 
