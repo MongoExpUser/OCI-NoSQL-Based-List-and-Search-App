@@ -71,8 +71,8 @@ class Crypto
             // print hash (i.e. digest) algorithms in OpenSSL version bundled  with the current Node.js version
             if(showAlgorithm === true)
             {
-              var hashesAlgorithms = crypto.getHashes();
-              console.log(hashesAlgorithms);
+              var hashAlgorithms = crypto.getHashes();
+              console.log( { "supportedHashAlgorithms" : hashAlgorithms } );
             }
             
             return true;
