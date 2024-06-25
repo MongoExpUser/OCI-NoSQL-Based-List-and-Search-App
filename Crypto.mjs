@@ -132,7 +132,7 @@ class Crypto
                 hashAlgorithm = "sha512"; //set the default algorithm
             }
             
-            if( (init === true) && sig && hashAlgorithm) // && !compareSig && !compareSalt && !compareHashSig && !compareDateNow)
+            if( (init === true) && sig && hashAlgorithm)
             {
                 let areSigArray  = Array.isArray(sig);
                 let combinedSig = "";
