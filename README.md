@@ -21,7 +21,7 @@
     The NodeJS application can be tested via the command line interface. See sample search results in the figure below.
 
 
-### Architectural Diagram Showing Smaple of Search Results
+### Architectural Diagram Showing Sample of Search Results
 ![Image description](https://github.com/MongoExpUser/OCI-NoSQL-Based-List-and-Search-App/blob/main/sample-car-search.png)
 
 
