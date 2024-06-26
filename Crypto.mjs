@@ -9,15 +9,14 @@
 # *  1) The module implements a Crypto class of:                                                                 *
 # *     a) Crytographic functionalities                                                                          *
 # *  2) The implementation is done with the following Node.js packages                                           *
-# *     (a) nodejs native crypto - https://nodejs.org/api/crypto.html                                            *
-# *     (b) bcryptjs  - https://www.npmjs.com/package/bcryptjs                                                   *
+# *     (a) Nodejs native crypto - https://nodejs.org/api/crypto.html                                            *
+# *     (b) Bcryptjs  - https://www.npmjs.com/package/bcryptjs                                                   *
 # *                                                                                                              *
 # ****************************************************************************************************************
 # * Note:                                                                                                        *
-# * a) SHA-512 Algorithm      : SHA-512   --> based on node.js' crypto.createHmac() - depends on OpenSSL version *
-# * b) WHIRLPOOL Algorithm    : WHIRLPOOL --> based on node.js' crypto.createHmac() - depends on OpenSSL version *
-# * c) BCrypt Algorithm       : Bcrypt    --> based on "bcryptjs" module (https://github.com/dcodeIO/bcrypt.js)  *
-# * d) SCrypt Algorithm       : Scrypt    --> based on  node.js' crypto.scrypt()                                 *
+# * a) BCrypt Algorithm       : Bcrypt    --> based on "bcryptjs" module (https://github.com/dcodeIO/bcrypt.js)  *
+# * b) SHA-512 Algorithm      : SHA-512   --> based on node.js' crypto.createHmac() - depends on OpenSSL version *
+# * c) SCrypt Algorithm       : Scrypt    --> based on  node.js' crypto.scrypt()                                 *
 # *                                                                                                              *
 # * Node.js' crypo algorithm (for crypto.createHmac()) is dependent on the available algorithms supported by     *
 # * the version of OpenSSL on the platform.                                                                      *
