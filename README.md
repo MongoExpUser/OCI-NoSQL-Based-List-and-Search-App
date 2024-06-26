@@ -14,7 +14,7 @@
     The application is written with NodeJS.
 
 ### 2) Limitation: 
-    The browser-based user interface (GUI) for listing and seaching, is not currentl included.
+    The browser-based user interface (GUI) for listing and seaching, is not currently included.
     
     The application can easily be extended to add browser-based GUI.
     
