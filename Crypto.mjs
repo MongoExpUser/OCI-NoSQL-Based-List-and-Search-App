@@ -41,7 +41,7 @@ import bcryptjs from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
 
 
-lass Crypto
+class Crypto
 {
     constructor()
     {
