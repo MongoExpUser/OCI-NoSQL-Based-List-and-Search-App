@@ -13,13 +13,20 @@
 # *         Ref 1:  https://www.npmjs.com/package/oracle-nosqldb                                                 *
 # *         Ref 2:  https://oracle.github.io/nosql-node-sdk/.                                                    *
 # *         - Install as: sudo npm i oracle-nosqldb (On Linux/Ubuntu OS)                                         *
-# *     (b) Faker - Data is generated with @faker-js/faker Node.js libary                                        *
+# *     (b) Bcryptjs                                                                                             *
+# *         Ref 1:  https://www.npmjs.com/package/bcryptjs                                                       *
+# *         - Install as: sudo npm i bcryptjs (On Linux/Ubuntu OS)                                               *
+# *     (c) Uuid                                                                                                 *
+# *         Ref 1:  https://www.npmjs.com/package/uuid.                                                          *
+# *         - Install as: sudo npm i uuid (On Linux/Ubuntu OS)                                                   *
+# *     (d) Faker - Data is generated with @faker-js/faker Node.js libary                                        *
 # *         Ref 1:  https://www.npmjs.com/package/@faker-js/faker                                                *
 # *         Ref 2:  https://fakerjs.dev/api/                                                                     *
 # *         - Install as: sudo npm install @faker-js/faker (On Linux/Ubuntu OS)                                  *
 # *                                                                                                              *
 # ****************************************************************************************************************
 */
+
 
 
 
