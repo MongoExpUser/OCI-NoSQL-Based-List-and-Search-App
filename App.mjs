@@ -23,14 +23,14 @@
 
 
 
-import fs from "fs";
-import util from "util";
+import fs from "node:fs";
+import util from "node:util";
 import bcryptjs from "bcryptjs";
 import { v4 as uuidv4 } from "uuid";
 import { faker } from "@faker-js/faker";
 import { UserCrypto } from "./Crypto.mjs";
 import { NoSQLClient } from "oracle-nosqldb";
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync } from "node:fs";
 
 
 class CarApp
