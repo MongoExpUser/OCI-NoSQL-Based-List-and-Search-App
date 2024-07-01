@@ -186,6 +186,8 @@ class CarApp
 
     async createDropTableAndWriteReadData(client, tableName, record, tableLimits, createTable, writeRecord, readRecord, dropTable, createIndex, indexName, indexColumn) 
     {
+        const capp = new CarApp();
+        
         if(createIndex === true)
         {
             const createIndex = `CREATE INDEX IF NOT EXISTS ${indexName} ON ${tableName}(${indexColumn})`
@@ -239,11 +241,13 @@ class CarApp
 
             if(tableName === "users")
             {
-                console.log( {"Retrieved record details" : JSON.parse(res.row.details) } ) ;
+                let showHidden = false;
+                capp.prettyPrint( {"Retrieved record details" : JSON.parse(res.row.details) }, showHidden ) ;
             }
             else
             {
-                console.log( {"Retrieved record" : res.row } ) ;
+                let showHidden = false;
+                capp.prettyPrint( {"Retrieved record" : res.row }, showHidden ) ;
             }
 
             if(res.consumedCapacity) 
