@@ -7,7 +7,7 @@
 ![Image description](https://github.com/MongoExpUser/OCI-NoSQL-Based-List-and-Search-App/blob/main/oci-no-no-sql-db-app.arch-digram.png)
 
 ### 1) Purpose:                                                                                             
-    This application is used for listing and searching cars for to be sold or rented.
+    This application is used for listing and searching cars to be sold or rented.
     
     The data store is Oracle/OCI NoSQL database.
     
