@@ -242,12 +242,12 @@ class CarApp
             if(tableName === "users")
             {
                 let showHidden = false;
-                capp.prettyPrint( {"Retrieved record details" : JSON.parse(res.row.details) }, showHidden ) ;
+                capp.prettyPrint( {"Retrieved user record  details" : JSON.parse(res.row.details) }, showHidden ) ;
             }
             else
             {
                 let showHidden = false;
-                capp.prettyPrint( {"Retrieved record" : res.row }, showHidden ) ;
+                capp.prettyPrint( {"Retrieved car record details" : res.row }, showHidden ) ;
             }
 
             if(res.consumedCapacity) 
