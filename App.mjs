@@ -368,9 +368,9 @@ async function main()
         {
             if(userOperations === true)
             {
-                const details = JSON.stringify(data[i].user);
+                const details = data[i].user;
                 const userTable = tableNames.users;
-                const userRecord = { username : data[i].user.username, email : data[i].user.email, details :  details }
+                const userRecord = { "username" : details.username, "email" : details.email, "details" :  JSON.stringify(details) };
                 await capp.runOperation(client, userTable, userRecord, tableLimits, createTable, writeRecord, readRecord, dropTable, createIndex, userIndexName, userIndexColumn);
                 console.log( "Successfully Oracle NoSQL Database user operation(s)!");
                 console.log( "----------------------------------------------------");
@@ -378,9 +378,9 @@ async function main()
 
             if(carOperations === true)
             {
-                const details = JSON.stringify(data[i].info);
+                const details = data[i].info;
                 const carTable = tableNames.cars;
-                const carRecord = details;
+                const carRecord = JSON.stringify(details);
                 await capp.runOperation(client, carTable , carRecord, tableLimits, createTable, writeRecord, readRecord, dropTable, createIndex, carIndexName, carIndexColumn);
                 console.log( "Successfully Oracle NoSQL Database car operation(s)!");
                 console.log( "----------------------------------------------------");
