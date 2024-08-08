@@ -368,7 +368,7 @@ async function main()
         {
             if(userOperations === true)
             {
-                const details = JSON.stringify(data[i].user.details);
+                const details = JSON.stringify(data[i].user);
                 const userTable = tableNames.users;
                 const userRecord = { username : data[i].user.username, email : data[i].user.email, details :  details }
                 await capp.runOperation(client, userTable, userRecord, tableLimits, createTable, writeRecord, readRecord, dropTable, createIndex, userIndexName, userIndexColumn);
@@ -378,23 +378,9 @@ async function main()
 
             if(carOperations === true)
             {
-                const details = JSON.stringify(data[i].user.details);
+                const details = JSON.stringify(data[i].info);
                 const carTable = tableNames.cars;
-                
-                const addressJson = JSON.stringify(data[i].info.addressJson);
-                const createdon = data[i].info.createdon;   
-                const updatedon = data[i].info.updatedon;     
-                const carRecord = { 
-                    "email" : data[i].info.email, 
-                    "manufacturer": data[i].info.manufacturer,
-                    "yearMade" : data[i].info.yearMade, 
-                    "addressPlain" : data[i].info.addressPlain, 
-                    "addressJson" : data[i].info.addressJson, 
-                    "description" : data[i].info.description, 
-                    "imagePath" : data[i].info.imagePath, 
-                    "createdon" : createdon, 
-                    "updatedon" : updatedon 
-                };
+                const carRecord = details;
                 await capp.runOperation(client, carTable , carRecord, tableLimits, createTable, writeRecord, readRecord, dropTable, createIndex, carIndexName, carIndexColumn);
                 console.log( "Successfully Oracle NoSQL Database car operation(s)!");
                 console.log( "----------------------------------------------------");
